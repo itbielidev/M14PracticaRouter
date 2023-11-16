@@ -1,11 +1,13 @@
 <script setup lang="ts">
-
+import dades from '@/data.json';
+import { ref } from 'vue';
+import DestinationShow from './DestinationShow.vue';
+const info=ref(dades.desinations)
 </script>
 
 <template>
   <main>
 <h1>All destinations</h1>
-
 <section class="destinations-box">
   <article class="destination-box">
     <h2>Title</h2>
@@ -14,8 +16,17 @@
   <article class="destination-box"></article>
   <article class="destination-box"></article>
   <article class="destination-box"></article>
+
 </section>
   </main>
+
+  <div class="home">
+    <RouterLink v-for="destination in info" :key="destination.id" :to="{name:'destination.show', params:{id:destination.id}}" >
+    <h2>{{ destination.name }}</h2>
+      <img src="`/images/${destination.image}`" alt="destination.name">
+    </RouterLink>
+    <RouterView></RouterView>
+  </div>
 </template>
 
 <style scoped>
