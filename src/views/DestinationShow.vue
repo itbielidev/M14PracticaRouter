@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Data from '@/assets/data.json'
+import type ExperienceCardVue from '@/components/ExperienceCard.vue';
 import {reactive} from 'vue';
 import {useRoute} from 'vue-router';
 const locations = reactive(Data)
@@ -16,7 +17,9 @@ const locationId = <number><any> route.params.id
         <p>{{ locations.destinations[locationId-1].description }}</p>
         <img :src="`/img/${locations.destinations[locationId-1].image}`">
         <section id="top-experiences">
-
+            <h2>Top experiences in {{ locations.destinations[locationId-1].name }}</h2>
+            <ExperienceCardVue experience></ExperienceCardVue>
+            //Hare un router link con un v-for envolviendo esta experience card pasando un argumento por parametro
         </section>
     </main>
 </template>

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import dades from '@/data.json';
+import Data from '@/assets/data.json'
 import { ref } from 'vue';
 import DestinationShow from './DestinationShow.vue';
-const info=ref(dades.desinations)
+const info=ref(Data.destinations)
 </script>
 
 <template>
