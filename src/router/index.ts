@@ -10,11 +10,10 @@ const router = createRouter({
       name: 'home',
       component: HomeView
     },{
-      path:'destination/:id/:slug',
+      path:'/destination/:id/:slug',
       name:'destination.show',
       component:()=>import('@/views/DestinationShow.vue'),//lazy router
       props: route=> ({...route.params, id: parseInt(route.params.id as string)}),
-      
     }
   ]
 })

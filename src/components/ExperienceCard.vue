@@ -1,14 +1,12 @@
 <template>
-    <div>
-        <img src="" alt="">
-        <span>Top Experience</span>
+    <div class="card">
+        <img :src="`/images/${props.experience.image}`">
+        <span class="card__text">{{ props.experience.name }}</span>
     </div>
 </template>
 
 <script setup lang="ts">
-import Data from '@/assets/data.json'
-import {reactive} from 'vue';
-const location = reactive(Data.destinations)
+const props = defineProps(['experience'])
 </script>
 
 <style>

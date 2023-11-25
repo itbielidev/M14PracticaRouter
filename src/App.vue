@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import TheNavigation from '@/components/TheNavigation.vue'
+import { RouterView } from 'vue-router'
+import TheNavigation from './components/TheNavigation.vue'
+
 </script>
 <template>
   <header>
@@ -14,5 +15,7 @@ import TheNavigation from '@/components/TheNavigation.vue'
 <style scoped>
 *{
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 </style>

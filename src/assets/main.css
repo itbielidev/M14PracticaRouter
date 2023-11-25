@@ -15,10 +15,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 }
-a,
-a:visited {
-  color: #2c3e50;
-}
 .container {
   margin: 0 auto;
   max-width: 960px;
@@ -30,11 +26,11 @@ a:visited {
 }
 .home .destinations {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 /* Navigation */
-#nav {
+nav {
   position: fixed;
   top: 0;
   left: 0;
@@ -48,15 +44,15 @@ a:visited {
   border-bottom: 5px solid #4e6c71;
   z-index: 2;
 }
-#nav a {
+nav a {
   display: inline-block;
   margin-right: 20px;
   color: white;
   opacity: 0.7;
   transition: 0.2 ease color;
 }
-#nav a.router-link-active,
-#nav a:hover {
+nav a.router-link-active,
+nav a:hover {
   opacity: 1;
 }
 #logo {
@@ -75,11 +71,16 @@ a {
   display: flex;
   gap: 30px;
   align-items: center;
+  margin-top: 1rem;
 }
 .destination-details img {
   border-radius: 4px;
   border: 3px solid white;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.destination-details p {
+  max-width: 50%;
 }
 
 /*Experiences*/
@@ -118,9 +119,12 @@ a {
   padding: 10px;
 }
 
+.experience-details {
+  display: flex;
+  flex-direction: column;
+}
 .experience-details img {
-  float: left;
-  margin: 10px;
+  width: 40%;
 }
 
 /*Modal Overlay*/
